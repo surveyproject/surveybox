@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!-- WARNING, WARNING, WARNING -->
+<!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
+
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="MSBuild.Community.Tasks.Targets" />
+  <Target Name="PackageModule" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <XmlRead Prefix="n"
+                    Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                    XPath="dotnetnuke/packages/package[1]/@version"
+                    XmlFileName="$(DNNFileName).dnn">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+
+    <!--in VS 2012 we exclude the packages folder -->
+    <ItemGroup>     
+      <InstallInclude Include="**\*.ascx" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.asmx" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.css" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.html" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.htm" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.resx" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.aspx" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.txt"  Exclude="**\obj\**;**\_ReSharper*\**;Scripts\**;packages\**;**\.git\**;" />
+      <InstallInclude Include="**\Images\**" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\XmlData\**" Exclude="packages\**;" />
+      <InstallInclude Include="**\*.pdf" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.eot" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.svg" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.ttf" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.woff" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.otf" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\Scripts\**" Exclude="packages\**" />
+    </ItemGroup>
+
+    <!--
+    <ItemGroup>
+      <ScriptInclude Include="**\Scripts\ckeditor\**" Exclude="packages\**" />
+      <ScriptInclude Include="**\Scripts\Filemanager\**" Exclude="packages\**" />
+    </ItemGroup>
+    -->
+        
+    <CreateItem Include="$(DNNFileName).dnn">
+      <Output TaskParameter="Include" ItemName="PackageManifestFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\Eula.html">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\ReleaseNotes.html">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\*.sqldataprovider">
+      <Output TaskParameter="Include" ItemName="SqlDataProviderFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\Assemblies\*.dll">
+      <Output TaskParameter="Include" ItemName="Assemblies" />
+    </CreateItem>
+
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\$(AssemblyName).dll" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="@(Assemblies)" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin"/>
+    <Copy SourceFiles="@(SqlDataProviderFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package\%(RecursiveDir)" />
+    <Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+    <Copy SourceFiles="@(PackageTxtFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+    
+    <!-- create the INSTALL RESOURCES.ZIP file -->
+    <Copy SourceFiles="@(InstallInclude)" DestinationFolder="$(MSBuildProjectDirectory)\ResourcesZip\%(RecursiveDir)" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\ResourcesZip\**\*.*">
+      <Output TaskParameter="Include" ItemName="ResourcesContent" />
+    </CreateItem>
+    
+    <Zip Files="@(ResourcesContent)" WorkingDirectory="$(MSBuildProjectDirectory)\ResourcesZip" ZipFileName="Resources.$(Extension)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Resources.$(Extension)" DestinationFolder="package/" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
+      <Output TaskParameter="Include" ItemName="OutputContent" />
+    </CreateItem>
+
+    <!-- create the SCRIPTS RESOURCES.ZIP file 
+    <Copy SourceFiles="@(ScriptInclude)" DestinationFolder="$(MSBuildProjectDirectory)\ScriptResourcesZip\%(RecursiveDir)" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\ScriptResourcesZip\**\*.*">
+      <Output TaskParameter="Include" ItemName="ScriptResourcesContent" />
+    </CreateItem>
+
+    <Zip Files="@(ScriptResourcesContent)" WorkingDirectory="$(MSBuildProjectDirectory)\ScriptResourcesZip" ZipFileName="ScriptResources.$(Extension)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\ScriptResources.$(Extension)" DestinationFolder="package/" />
+
+    <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
+      <Output TaskParameter="Include" ItemName="ScriptOutputContent" />
+    </CreateItem>
+    -->    
+    
+    <!-- Create the Install package -->    
+    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(PackageName)_$(Version)_Install.$(Extension)" />
+    <!-- Copy the Install package to the Packages folder -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" DestinationFolder="install/" />
+
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
+    <!-- <RemoveDir Directories ="$(MSBuildProjectDirectory)\ScriptResourcesZip" /> -->  
+    
+    <!-- Clean temp files and directories-->
+    <Delete Files="$(MSBuildProjectDirectory)\$(PackageName)_$(Version)_Install.$(Extension)" />
+    <Delete Files="$(MSBuildProjectDirectory)\Resources.Zip" />
+    <!-- <Delete Files="$(MSBuildProjectDirectory)\ScriptResources.Zip" /> -->
+
+
+    
+  </Target>
+</Project>
