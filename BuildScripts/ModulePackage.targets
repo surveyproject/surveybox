@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="windows-1252"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <!-- WARNING, WARNING, WARNING -->
 <!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
 
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="MSBuild.Community.Tasks.Targets" />
   <Target Name="PackageModule" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <XmlRead Prefix="n"
@@ -18,6 +18,7 @@
       <InstallInclude Include="**\*.ascx" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.asmx" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.css" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.map" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.html" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.htm" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.resx" Exclude="packages\**;Scripts\**;" />
@@ -26,10 +27,12 @@
       <InstallInclude Include="**\Images\**" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\XmlData\**" Exclude="packages\**;" />
       <InstallInclude Include="**\*.pdf" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.xml" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.eot" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.svg" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.ttf" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.woff" Exclude="packages\**;Scripts\**;" />
+      <InstallInclude Include="**\*.woff2" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\*.otf" Exclude="packages\**;Scripts\**;" />
       <InstallInclude Include="**\Scripts\**" Exclude="packages\**" />
     </ItemGroup>
@@ -46,6 +49,10 @@
     </CreateItem>
 
     <CreateItem Include="**\Eula.html">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\01.02.00_cleanup.txt">
       <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
     </CreateItem>
 

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SurveyBox")]
-[assembly: AssemblyDescription("SP™ Survey and Forms WebControl")]
+[assembly: AssemblyDescription("Survey™ Project Surveys & Webforms for DNN")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("W3DevPro™")]
 [assembly: AssemblyProduct("Survey™ Project - SurveyBox")]

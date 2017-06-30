@@ -5,14 +5,32 @@
 
 
 <%@ Register TagName="label" TagPrefix="dnn" Src="~/controls/labelcontrol.ascx" %>
+<style>
+    .pnlBasicHelp{
+        float:right;
+        width:85vw;
+        margin: 15px;
+        padding:10px;
+        background-color: aliceblue;
+    }
 
+</style>
+
+	<h2 id="dnnSitePanel-BasicHelp" class="dnnFormSectionHead"><a href="" class="dnnSectionExpanded"><%=LocalizeString("BasicHelp")%></a></h2>
+	<fieldset>
+        <div class="dnnFormItem">
+            <dnn:label  ID="lblBasicHelp" runat="server" />
+            <asp:Panel ID="pnlBasicHelp" CssClass="pnlBasicHelp" runat="server"><%=LocalizeString("pnlBasicHelp") %></asp:Panel>
+
+        </div>
+    </fieldset>
 
 	<h2 id="dnnSitePanel-BasicUserID" class="dnnFormSectionHead"><a href="" class="dnnSectionExpanded"><%=LocalizeString("BasicUserID")%></a></h2>
 	<fieldset>
         <div class="dnnFormItem">
             <dnn:Label ID="lblUserID" runat="server" /> 
  
-            <asp:TextBox ID="txtUserID" runat="server" />
+            <asp:TextBox ID="txtUserID" ReadOnly="true" runat="server" />
         </div>
 
           <div class="dnnFormItem">
@@ -27,7 +45,7 @@
         <div class="dnnFormItem">
             <dnn:Label ID="lblSurveyID" runat="server" /> 
  
-            <asp:TextBox ID="txtSurveyID" runat="server" />
+            <asp:TextBox ID="txtSurveyID" ReadOnly="true" runat="server" />
         </div>
 
           <div class="dnnFormItem">

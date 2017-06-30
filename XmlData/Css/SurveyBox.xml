@@ -1,0 +1,240 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+  <data version="2.4" id="mbCW" name="MessageBoxContainerWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="mbC" name="MessageBoxContainer">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="mbMP" name="NotYetOpenedSurveyMessage">
+    <value>notYetOpenedSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="InactiveSurveyMessage">
+    <value>inactiveSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="ClosedSurveyMessage">
+    <value>closedSurveyMessage</value>
+  </data>
+  <data version="2.4" id="mbMP" name="ClosedDateSurveyMessage">
+    <value>closedSurveyMessage</value>
+  </data>
+  <data version="2.4" id="lrqCW" name="MultiLanguageContainerWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="lrqC" name="MultiLanguageContainer">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="lrB" name="LanguageRequestButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="lrDDL" name="LanguageRequestDDL">
+    <value>lddl</value>
+  </data>
+  <data version="2.4" id="lrT" name="LanguageRequestTable">
+    <value>tablelddl</value>
+  </data>
+  <data version="2.4" id="lrlM" name="LanguageRequestMessage">
+    <value>languageMessage</value>
+  </data>
+  <data version="2.4" id="lrlDDLP" name="LanguageDropDownListPanel">
+    <value>languageDropDownList</value>
+  </data>
+  <data version="2.4" id="lrlBP" name="LanguageButtonPanel">
+    <value>languageButtonPanel</value>
+  </data>
+  <data version="2.4" id="pNP" name="PageNumberPanel">
+    <value>pageNumberPanel</value>
+  </data>
+  <data version="2.4" id="pN" name="PageNumberLabel">
+    <value>pageNumberLabel</value>
+  </data>
+  <data version="2.4" id="cP" name="PageNumberCurrent">
+    <value>currentPage</value>
+  </data>
+  <data version="2.4" id="vP" name="PageNumberVisited">
+    <value>visitedPage</value>
+  </data>
+  <data version="2.4" id="naP" name="PageNumberNonactive">
+    <value>nonactivePage</value>
+  </data>
+  <data version="2.4" id="npBRP" name="NextPageButtonRowPanel">
+    <value>nextPageButtonRowPanel</value>
+  </data>
+  <data version="2.4" id="npNP" name="NextPageNavigationPanel">
+    <value>navigationPanel</value>
+  </data>
+  <data version="2.4" id="ppbB" name="PreviousPageButton">
+    <value>previousPageButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="ppBP" name="PreviousPageButtonPanel">
+    <value>previousPageButtonPanel</value>
+  </data>
+  <data version="2.4" id="npSB" name="NextPageSubmitButton">
+    <value>nextPageButtonSubmit btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="npSBP" name="NextPageSubmitButtonPanel">
+    <value>nextPageSubmitButtonPanel</value>
+  </data>
+  <data version="2.4" id="RPB" name="ResumeProgressButton">
+    <value>resumeProgressButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="npRPBP" name="NextPageResumeProgressButtonPanel">
+    <value>resumeProgressButtonPanel</value>
+  </data>
+  <data version="2.4" id="npSPBP" name="NextPageSaveProgressButtonPanel">
+    <value>saveProgressButtonPanel</value>
+  </data>
+  <data version="2.4" id="spB" name="SaveProgressButton">
+    <value>saveProgressButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rrUB" name="ResumeRequestUidButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rrCB" name="ResumeRequestCancelButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="rct" name="ResumeRequestTable">
+    <value>rct</value>
+  </data>
+  <data version="2.4" id="erUM" name="EnterResumeUIdMessage">
+    <value />
+  </data>
+  <data version="2.4" id="bsbP" name="BuildSubmitButtonPanel">
+    <value>pageButtonRow</value>
+  </data>
+  <data version="2.4" id="bsbSP" name="BuildSubmitButtonSubPanel">
+    <value>navigationPanel</value>
+  </data>
+  <data version="2.4" id="bsbPPBP" name="BuildSubmitPPBSubPanel">
+    <value>previousPageButtonPanel</value>
+  </data>
+  <data version="2.4" id="ssB" name="SurveySubmitButton">
+    <value>surveySubmitButton btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="ssbP" name="SurveySubmitButtonPanel">
+    <value>surveySubmitButtonPanel</value>
+  </data>
+  <data version="2.4" id="bsbQCP" name="BuildSurveyBoxQCPanel">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="bsbQCSP" name="BuildSurveyBoxQCSubPanel">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="bsbcT" name="BuildThankBoxCssTable">
+    <value>thanksboxCss</value>
+  </data>
+  <data version="2.4" id="bsbcP" name="BuildThankBoxCssPanel">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="bsbcSP" name="BuildThankBoxCssSubPanel">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="ruSE" name="OnResumeUidSubmitError">
+    <value>errorMessage</value>
+  </data>
+  <data version="2.4" id="oruse" name="AnswerSelectionRadioButton">
+    <value />
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButtonLabel">
+    <value>globalRadioButtonLabel</value>
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButtonDiv">
+    <value />
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButton">
+    <value>globalRadioButton</value>
+  </data>
+  <data version="2.4" id="oruse" name="GlobalRadioButtonTextAlign">
+    <value>Left</value>
+  </data>
+  <data version="2.4" id="atr" name="AnswerTextRender">
+    <value>answerTextRender</value>
+  </data>
+  <data version="2.4" id="ams" name="AnswerMandatorySign">
+    <value>answer-warning-sign</value>
+  </data>
+  <data version="2.4" id="sucmes" name="SuccessMessage">
+    <value>SuccessMessage icon-ok</value>
+  </data>
+  <data version="2.4" id="ermes" name="ErrorMessage">
+    <value>errorMessage icon-warning-sign</value>
+  </data>
+  <data version="2.4" id="qht" name="QuestionHelpText">
+    <value>helpTextSmallFont</value>
+  </data>
+  <data version="2.4" id="aulb" name="AnswerUploadButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="pwB" name="PasswordButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="pwMP" name="PasswordMessagePanel">
+    <value>passwordMessage</value>
+  </data>
+  <data version="2.4" id="pwT" name="PassWordTable">
+    <value>tablelddl</value>
+  </data>
+  <data version="2.4" id="pwTB" name="PasswordTextBox">
+    <value>lddl</value>
+  </data>
+  <data version="2.4" id="pwTBP" name="PasswordTextBoxPanel">
+    <value>passwordTextBox</value>
+  </data>
+  <data version="2.4" id="pwSBP" name="PasswordSubmitButtonPanel">
+    <value />
+  </data>
+  <data version="2.4" id="pwWR" name="PasswordWrapper">
+    <value>questionContainerWrapper</value>
+  </data>
+  <data version="2.4" id="pwSP" name="PasswordSubPanel">
+    <value>questionContainer</value>
+  </data>
+  <data version="2.4" id="pwEM" name="PasswordErrorMessage">
+    <value>errorMessage</value>
+  </data>
+  <data version="2.4" id="tsEM" name="TokensecurityErrorMessage">
+    <value>errorMessage</value>
+  </data>
+  <data version="2.4" id="eqEM" name="EntryquotaErrorMessage">
+    <value>entryquotaErrorMessage</value>
+  </data>
+  <data version="2.4" id="etBtn" name="EnterTokenButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="etMsg" name="EnterTokenMessage">
+    <value>enterTokenMessage</value>
+  </data>
+  <data version="2.4" id="etTbl" name="EnterTokenTable">
+    <value>enterTokenTable</value>
+  </data>
+  <data version="2.4" id="etTB" name="EnterTokenTextBox">
+    <value>enterTokenTextBox</value>
+  </data>
+  <data version="2.4" id="etTB" name="EnterTokenTextBoxInsert">
+    <value>enterTokenTextBoxInsert</value>
+  </data>
+  <data version="2.4" id="eicTbl" name="EmailInvCodeTable">
+    <value>emailInvCodeTable</value>
+  </data>
+  <data version="2.4" id="eicBtn" name="EmailInvCodeButton">
+    <value>btn btn-primary btn-xs bw</value>
+  </data>
+  <data version="2.4" id="eicTB" name="EmailInvCodeTextbox">
+    <value>emailInvCodeTextBox</value>
+  </data>
+  <data version="2.4" id="eicMsg" name="EmailInvCodeMessage">
+    <value>emailInvCodeMessage</value>
+  </data>
+  <data version="2.4" id="eicTBC" name="EmailInvCodeTextboxCell">
+    <value>emailInvCodeTextboxCell</value>
+  </data>
+  <data version="2.4" id="eicEMsg" name="EmailInvCodeErrorMessage">
+    <value>errorMessage</value>
+  </data>
+  <data version="2.4" id="tyMsg" name="ThankYouMessage">
+    <value>thankYouMessage</value>
+  </data>
+  <data version="2.4" id="msSD" name="MatrixSectionScrollableDiv">
+    <value>scrollableDiv</value>
+  </data>
+</root>

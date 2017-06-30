@@ -1,0 +1,15 @@
+' clean redundant SurveyBox 1.1.0 files - before v. 1.2
+DesktopModules\SurveyBox\Css\bootstrap.min.css
+DesktopModules\SurveyBox\Css\bootstrap-theme.min.css
+DesktopModules\SurveyBox\Css\font-awesome.min.css
+DesktopModules\SurveyBox\Css\loginform.css
+DesktopModules\SurveyBox\Documentation\SurveyProject_SurveyBoxInstallationGuide_v2_20140920.pdf
+DesktopModules\SurveyBox\Scripts\css\
+DesktopModules\SurveyBox\Scripts\Javascript\01_jquery\
+DesktopModules\SurveyBox\Scripts\Javascript\cssmenu\
+DesktopModules\SurveyBox\Scripts\Javascript\fileinput\
+DesktopModules\SurveyBox\Scripts\Javascript\HTML5shiv\
+DesktopModules\SurveyBox\Scripts\Javascript\slider\
+DesktopModules\SurveyBox\Scripts\Javascript\ui\
+DesktopModules\SurveyBox\Scripts\js\
+DesktopModules\SurveyBox\Scripts\modernizr-2.7.2.js

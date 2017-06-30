@@ -57,10 +57,16 @@ namespace FWS.Modules.SurveyBox
         /// <returns>id = SurveyID</returns>
         private int SurveyID()
         {
-
             object id = base.Settings["SurveyID"];
-            if (id == null) return 0;
+            if (id == null) return -1;
             return Convert.ToInt32(id);
+        }
+
+        protected Int64 GetSurveyId()
+        {
+            //string sp_surveyid = Convert.ToString(SurveyID());
+            int sp_surveyid = SurveyID();
+            return sp_surveyid;
         }
 
         /// <summary>
@@ -69,10 +75,56 @@ namespace FWS.Modules.SurveyBox
         /// <returns>id = UserID</returns>
         private int UserID()
         {
-
             object id = base.Settings["UserID"];
             if (id == null) return 0;
             return Convert.ToInt32(id);
+        }
+
+        protected String GetSpUserId()
+        {
+            string sp_userid = Convert.ToString(UserID());
+            return sp_userid;
+        }
+
+
+        protected override void OnInit(EventArgs e)
+        {
+            //Jquery CSS files
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //Jquery UI 1.11.4 css:
+            HtmlGenericControl css = new HtmlGenericControl("link");
+            css.Attributes.Add("rel", "stylesheet");
+            css.Attributes.Add("type", "text/css");
+            css.Attributes.Add("href", ResolveUrl("~/DesktopModules/SurveyBox/Content/themes/base/base.css"));
+            Page.Header.Controls.Add(css);
+
+            //jQuery(necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem, answerfieldcalendar
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
+
+            //Commented out: conflicting with DNN older versions of Jquery:
+
+            //javascriptControl.Attributes.Add("id", "jq311");
+            //javascriptControl.Attributes.Add("src", ResolveUrl("~/DesktopModules/SurveyBox/Scripts/jquery-3.1.1.min.js"));
+            //Page.Header.Controls.Add(javascriptControl);
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            //javascriptControl = new HtmlGenericControl("script");
+            //javascriptControl.Attributes.Add("src", ResolveUrl("~/DesktopModules/SurveyBox/Scripts/jquery-ui-1.12.1.min.js"));
+            //Page.Header.Controls.Add(javascriptControl);
+
+            //Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
+            javascriptControl = new HtmlGenericControl("script");
+            javascriptControl.Attributes.Add("src", ResolveUrl("~/DesktopModules/SurveyBox/Scripts/jquery-ui-i18n.min.js"));
+            Page.Header.Controls.Add(javascriptControl);
+
+            Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
+
         }
 
 
@@ -85,50 +137,72 @@ namespace FWS.Modules.SurveyBox
                 if (!IsPostBack)
                 {
                     //on initial pageload get SurveyId from DNN module settings; if null int 0 is returned;
+
                     SurveyControl.SurveyId = SurveyID();
 
                     ModuleSecurity ms = new ModuleSecurity(this.ModuleConfiguration);
 
-                    if (ms.HasPermission2)
-                    {
-                    ShowSurveyDDL();
-                    }
-                    else
-                        SurveyControl.Visible = true;
+                        if (ms.HasPermission2 && UserID() != 0)
+                        {
+                            ShowSurveyDDL();
+                            SurveyControl.Visible = false;
+                        }
+                        else
+                        {
 
+
+                            if(SurveyID() >= 1)
+                            {
+                                SurveyControl.Visible = true;
+
+                            Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
+
+                            _userSettings = u.SurveyLayoutGet(SurveyControl.SurveyId);
+
+                            if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
+                            {
+                                if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
+                                {
+                                    defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
+
+                                }
+
+                            }
+
+                            }
+                        else
+                        {   //test:
+
+                                SurveyControl.SurveyId = 0;
+                                SurveyControl.Visible = false;
+                        }
+
+                    }             
 
                 }
 
-                Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
-                //_userSettings = u.SurveyLayoutGet(((PageBase)Page).getSurveyId());
-                //test set surveyid to 1
-                _userSettings = u.SurveyLayoutGet(1);
+                //Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
+                ////_userSettings = u.SurveyLayoutGet(((PageBase)Page).getSurveyId());
+                ////test set surveyid to 1
+                //_userSettings = u.SurveyLayoutGet(SurveyControl.SurveyId);
+
+                //if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
+                //{
+                //    if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
+                //    {
+                //        defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
+
+                //    }
+
+                //}
 
                 //Used if surveyid is taken from DNN module settings
                 // should depend on module permissions
                 //SurveyControl.SurveyId = SurveyID();
-
-
-                // jQuery (necessary for Bootstrap's JavaScript plugins) + answerfieldslideritem.cs
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-                HtmlGenericControl javascriptControl = new HtmlGenericControl("script");
-                javascriptControl.Attributes.Add("type", "text/Javascript");
-                javascriptControl.Attributes.Add("src", ResolveUrl("~/DesktopModules/SurveyBox/Scripts/JavaScript/01_jquery/jquery-1.11.1.js"));
-                Page.Header.Controls.Add(javascriptControl);
-
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
-
-                javascriptControl = new HtmlGenericControl("script");
-                javascriptControl.Attributes.Add("type", "text/Javascript");
-                javascriptControl.Attributes.Add("src", ResolveUrl("~/DesktopModules/SurveyBox/Scripts/JavaScript/ui/jquery-ui-1.10.4.js"));
-                Page.Header.Controls.Add(javascriptControl);
-
-                Page.Header.Controls.Add(new LiteralControl(Environment.NewLine));
             }
             catch (Exception exc) //Module failed to load
             {
-                Exceptions.ProcessModuleLoadException(this, exc);
+                Exceptions.ProcessModuleLoadException("A Friendly testmessage explaining things?!", this, exc, true);
             }
 
         }
@@ -174,10 +248,24 @@ namespace FWS.Modules.SurveyBox
             else return;
 
             ddlSurveys.Visible = false;
-            //phSurveysDll.Visible = false;
             ChooseSurveyLabel.Visible = false;
 
-            //SurveyControl.SurveyId = int.Parse(ddlSurveys.SelectedValue);
+            // custom CSS:
+            Votations.NSurvey.SQLServerDAL.SurveyLayout u = new Votations.NSurvey.SQLServerDAL.SurveyLayout();
+            _userSettings = u.SurveyLayoutGet(SurveyControl.SurveyId);
+
+            if (!(_userSettings == null || _userSettings.SurveyLayout.Count == 0))
+            {
+                if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
+                {
+
+                    defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
+
+                }
+
+            }
+
+
             SurveyControl.Visible = true;          
 
         }
@@ -196,6 +284,9 @@ namespace FWS.Modules.SurveyBox
             Session["DnnUserIdSessionValue"] = GetUserId();
             Session["DnnUserNameSessionValue"] = GetUserName();
             Session["DnnUserEmailSessionValue"] = GetUserEmail();
+
+            //Session["SpSurveyIdSessionValue"] = GetSurveyId();
+            //Session["SpUserIdSessionValue"] = GetSpUserId();
 
             //Default session timeout = after 20 min. of inactivity session will terminate;
 

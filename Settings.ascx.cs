@@ -117,23 +117,39 @@ namespace FWS.Modules.SurveyBox
 
                 if (ddlSurveys.SelectedValue != "-1")
                 {
-                    modules.UpdateModuleSetting(ModuleId, "SurveyID", ddlSurveys.SelectedValue);
+                    if (ddlSurveys.SelectedValue == "0")
+                    {
+                        modules.UpdateModuleSetting(ModuleId, "SurveyID", null);
+                    }
+                        modules.UpdateModuleSetting(ModuleId, "SurveyID", ddlSurveys.SelectedValue);
                 }
 
                 if (ddlUsers.SelectedValue != "-1")
                 {
-                    modules.UpdateModuleSetting(ModuleId, "UserID", ddlUsers.SelectedValue);
+                    if (ddlUsers.SelectedValue == "0")
+                    {
+                        modules.UpdateModuleSetting(ModuleId, "UserID", null);
+                    }
+                        modules.UpdateModuleSetting(ModuleId, "UserID", ddlUsers.SelectedValue);
                 }
 
                 //tab module settings
                 if (ddlSurveys.SelectedValue != "-1")
                 {
+                    if (ddlSurveys.SelectedValue == "0")
+                    {
+                        modules.UpdateModuleSetting(ModuleId, "SurveyID", null);
+                    }
                     modules.UpdateTabModuleSetting(TabModuleId, "SurveyID", ddlSurveys.SelectedValue);
                 }
 
                 if (ddlUsers.SelectedValue != "-1")
                 {
-                        modules.UpdateTabModuleSetting(TabModuleId, "UserID", ddlUsers.SelectedValue);
+                    if (ddlUsers.SelectedValue == "0")
+                    {
+                        modules.UpdateModuleSetting(ModuleId, "UserID", null);
+                    }
+                    modules.UpdateTabModuleSetting(TabModuleId, "UserID", ddlUsers.SelectedValue);
                 }
             }
             catch (Exception exc) //Module failed to load
@@ -148,6 +164,7 @@ namespace FWS.Modules.SurveyBox
 
             ddlSurveys.Items.Clear();
             ddlSurveys.Items.Add(new ListItem("Please Select a Survey", "-1"));
+            ddlSurveys.Items.Add(new ListItem("Remove Survey", "0"));
             ddlSurveys.AppendDataBoundItems = true;
             ddlSurveys.DataSource = surveys.Surveys;
             ddlSurveys.DataTextField = "Title";
@@ -161,7 +178,11 @@ namespace FWS.Modules.SurveyBox
         {
             if (ddlSurveys.SelectedValue != "-1")
             {
-                txtSurveyID.Text = ddlSurveys.SelectedValue;
+                if (ddlSurveys.SelectedValue == "0")
+                {
+                    txtSurveyID.Text = "";
+                }
+                    txtSurveyID.Text = ddlSurveys.SelectedValue;
 
             }
 
@@ -175,6 +196,7 @@ namespace FWS.Modules.SurveyBox
 
             ddlUsers.Items.Clear();
             ddlUsers.Items.Add(new ListItem("Please Select a User", "-1"));
+            ddlUsers.Items.Add(new ListItem("Remove User", "0"));
             ddlUsers.AppendDataBoundItems = true;
             ddlUsers.DataSource = users.Users;
             ddlUsers.DataTextField = "UserName";
@@ -188,8 +210,11 @@ namespace FWS.Modules.SurveyBox
         {
             if (ddlUsers.SelectedValue != "-1")
             {
+                if(ddlUsers.SelectedValue == "0")
+                {
+                    txtUserID.Text = "";
+                }
                 txtUserID.Text = ddlUsers.SelectedValue;
-
             }
 
         }

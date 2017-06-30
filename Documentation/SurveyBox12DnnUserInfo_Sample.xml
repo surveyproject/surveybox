@@ -1,0 +1,148 @@
+<NSurveyForm xmlns="http://tempuri.org/NSurveyForm.xsd">
+  <AnswerType AnswerTypeID="1" FieldWidth="0" FieldHeight="0" FieldLength="0" TypeMode="1" PublicFieldResults="false" BuiltIn="true">
+    <Description>SelectionTextType</Description>
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerSelectionItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <AnswerType AnswerTypeID="3" FieldWidth="20" FieldHeight="1" FieldLength="100" TypeMode="210" PublicFieldResults="false" BuiltIn="true">
+    <Description>FieldBasicType</Description>
+    <JavascriptFunctionName />
+    <JavascriptCode />
+    <JavascriptErrorMessage />
+    <TypeNameSpace>Votations.NSurvey.WebControls.UI.AnswerFieldItem</TypeNameSpace>
+    <TypeAssembly>Votations.NSurvey.WebControls</TypeAssembly>
+  </AnswerType>
+  <Survey>
+    <SurveyID>1</SurveyID>
+    <ProgressDisplayModeId>2</ProgressDisplayModeId>
+    <ResumeModeID>1</ResumeModeID>
+    <Title>SurveyBoxDNNUserInfo</Title>
+    <NavigationEnabled>true</NavigationEnabled>
+    <Scored>false</Scored>
+    <QuestionNumberingDisabled>false</QuestionNumberingDisabled>
+    <Activated>true</Activated>
+    <Archive>false</Archive>
+    <ResultsDisplayTimes>0</ResultsDisplayTimes>
+    <SurveyDisplayTimes>2</SurveyDisplayTimes>
+    <CreationDate>2017-06-18T12:18:01.983+02:00</CreationDate>
+  </Survey>
+  <Question QuestionId="1" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="1" DisplayOrder="1">
+    <QuestionText>DNN User Data?</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText />
+    <HelpText />
+    <Alias />
+    <ShowHelpText>False</ShowHelpText>
+    <OldQuestionId>109</OldQuestionId>
+  </Question>
+  <Question QuestionId="2" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="2" DisplayOrder="2">
+    <QuestionText>Hello [[DnnUserName]], can you please answer Question 2?</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText />
+    <HelpText />
+    <Alias />
+    <ShowHelpText>False</ShowHelpText>
+    <OldQuestionId>110</OldQuestionId>
+  </Question>
+  <Question QuestionId="3" LayoutModeId="1" SelectionModeId="1" ColumnsNumber="0" MinSelectionRequired="0" MaxSelectionAllowed="0" RatingEnabled="false" RandomizeAnswers="false" SurveyId="1" PageNumber="3" DisplayOrder="3">
+    <QuestionText>Final Question 3? Thanks for answering [[DnnUserName]], bye now.</QuestionText>
+    <QuestionPipeAlias />
+    <QuestionIDText />
+    <HelpText />
+    <Alias />
+    <ShowHelpText>False</ShowHelpText>
+    <OldQuestionId>111</OldQuestionId>
+  </Question>
+  <Answer QuestionId="1" AnswerTypeId="3" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="230" Mandatory="false">
+    <AnswerText>UserId</AnswerText>
+    <ImageURL />
+    <DefaultText>@@DnnUserIdSessionValue@@</DefaultText>
+    <AnswerPipeAlias />
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>230</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="1" AnswerTypeId="3" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="231" Mandatory="false">
+    <AnswerText>UserName</AnswerText>
+    <ImageURL />
+    <DefaultText>@@DnnUserNameSessionValue@@</DefaultText>
+    <AnswerPipeAlias>DnnUserName</AnswerPipeAlias>
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>231</OldAnswerId>
+    <CssClass />
+  </Answer>
+  <Answer QuestionId="1" AnswerTypeId="3" DisplayOrder="3" ScorePoint="0" RatePart="false" Selected="false" AnswerId="232" Mandatory="false">
+    <AnswerText>UserEmail</AnswerText>
+    <ImageURL />
+    <DefaultText>@@DnnUserEmailSessionValue@@</DefaultText>
+    <AnswerPipeAlias />
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>232</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="2" AnswerTypeId="3" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="233" Mandatory="false">
+    <AnswerText>My DNN Username</AnswerText>
+    <ImageURL />
+    <DefaultText>[[DnnUserName]]</DefaultText>
+    <AnswerPipeAlias />
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>233</OldAnswerId>
+    <CssClass />
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="1" ScorePoint="0" RatePart="false" Selected="false" AnswerId="234" Mandatory="false">
+    <AnswerText>Yes</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>234</OldAnswerId>
+  </Answer>
+  <Answer QuestionId="3" AnswerTypeId="1" DisplayOrder="2" ScorePoint="0" RatePart="false" Selected="false" AnswerId="235" Mandatory="false">
+    <AnswerText>No</AnswerText>
+    <ImageURL />
+    <DefaultText />
+    <AnswerPipeAlias />
+    <AnswerIdText />
+    <AnswerAlias />
+    <SliderRange />
+    <SliderValue>0</SliderValue>
+    <SliderMin>0</SliderMin>
+    <SliderMax>0</SliderMax>
+    <SliderAnimate>false</SliderAnimate>
+    <SliderStep>0</SliderStep>
+    <OldAnswerId>235</OldAnswerId>
+  </Answer>
+</NSurveyForm>

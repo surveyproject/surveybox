@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BasicHelp.Text" xml:space="preserve">
+    <value>Help on SurveyBox Settings</value>
+  </data>
   <data name="BasicSurveyID.Text" xml:space="preserve">
     <value>Select SurveyBox SurveyID</value>
   </data>
@@ -126,28 +129,106 @@
   <data name="ControlTitle_settings.Text" xml:space="preserve">
     <value>SurveyBox Settings</value>
   </data>
+  <data name="lblBasicHelp.Help" xml:space="preserve">
+    <value>Please read before changing Settings</value>
+  </data>
+  <data name="lblBasicHelp.Text" xml:space="preserve">
+    <value>On how to use the SurveyBox Settings</value>
+  </data>
   <data name="lblSurveyID.Help" xml:space="preserve">
-    <value>Enter SurveyID here</value>
+    <value>SurveyId of the selected Survey</value>
   </data>
   <data name="lblSurveyID.Text" xml:space="preserve">
-    <value>Survey ID</value>
+    <value>SP Survey ID</value>
   </data>
   <data name="lblSurveyIDDdl.Help" xml:space="preserve">
-    <value>Select one survey from the dropdownlist</value>
+    <value>Select SP Survey from the dropdownlist</value>
   </data>
   <data name="lblSurveyIDDdl.Text" xml:space="preserve">
     <value>List of SP Surveys</value>
   </data>
   <data name="lblUserID.Help" xml:space="preserve">
-    <value>Enter UserID here</value>
+    <value>UserId of selected SP User</value>
+    <comment>Test Comment does it show up?</comment>
   </data>
   <data name="lblUserID.Text" xml:space="preserve">
-    <value>User ID</value>
+    <value>SP User ID</value>
   </data>
   <data name="lblUserIDDdl.Help" xml:space="preserve">
-    <value>Select one user from the dropdownlist</value>
+    <value>Select SP User from the dropdownlist</value>
   </data>
   <data name="lblUserIDDdl.Text" xml:space="preserve">
     <value>List of SP Users</value>
+  </data>
+  <data name="pnlBasicHelp.Text" xml:space="preserve">
+    <value>&lt;h4&gt;General Explanation&lt;/h4&gt;
+&lt;br /&gt;
+To determine what survey is presented to the DNN user or public visitor there are two dropdownlists (DDL) to choose from.
+Both DDLs are populated (names/ values) directly from the SurveyProject database.
+&lt;br /&gt;&lt;br /&gt;
+The SurveyBox UserID DDL and corresponding module Permission are used to present a DDL with one or more surveys to select from.
+The SurveyBox SurveyID DDL is used to present a single survey directly on the DNN webpage.
+&lt;br /&gt;&lt;br /&gt;
+Both options are 'mutually exclusive'. I.e. either the DDL of surveys or the individual survey is presented to a group of DNN users (Role based) or 
+a specific DNN user. 
+&lt;br /&gt;&lt;br /&gt;
+NOTE - close the DNN Edit setting before selecting surveys from the DLL or starting a survey. An exception/ error will follow is the
+Edit setting is not closed.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+&lt;h5&gt;SurveyBox UserID&lt;/h5&gt;
+
+&lt;br /&gt;
+&lt;i&gt;o Step 1&lt;/i&gt;&lt;br /&gt;
+The DDL of Usernames (List of SP Users) is populated from the SP database (vts_tbusers table). If no SP user accounts exist the DLL will be empty.
+New useraccounts (username/ password) can be created in the SP webapplication. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Action:&lt;/b&gt; &lt;br /&gt;
+- create one or more useraccounts in the SP webapplication.&lt;br /&gt;
+- assign at least [two] surveys to the useraccount(s) in the SP webapplication (see step 2.)&lt;br /&gt;
+&lt;br /&gt;
+&lt;i&gt;o Step 2&lt;/i&gt;&lt;br /&gt;
+By selecting a name from the DDL of SP Users the SurveyBox UserID will be saved to the DNN database (table ModuleSettings). 
+All surveys assigned in the SP webapplication to the selected SP User will become available in a DDL on the DNN webpage. 
+If no surveys or less then two(!) are assigned in SP to the selected user the DLL will not show.&lt;br /&gt;
+&lt;br /&gt;
+&lt;b&gt;Action:&lt;/b&gt;&lt;br /&gt; 
+- select a username from the SurveyBox List of SP Users DLL&lt;br /&gt;
+- click the Update button&lt;br /&gt;
+&lt;br /&gt;
+&lt;i&gt;o Step 3&lt;/i&gt;&lt;br /&gt;
+The use of the SurveyBox UserID is directly linked to the 'Show SurveyList' permission on the module Permissions tab.
+If the 'Show Surveylist' permission is not activated (checked) for a Role or specific DNN user (Display Name) 
+the SurveyBox UserID selection will have no effect and no DLL is shown.
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Action:&lt;/b&gt;&lt;br /&gt;
+- go to the modules Permissions Tab&lt;br /&gt;
+- check the 'Show Surveylist' permission for a Role or a specific user (Display Name)&lt;br /&gt;
+- click the Update button&lt;br /&gt;
+&lt;br /&gt;
+After completing these steps authorised (see Permission) visitors (All Users) or DNN Users/ Roles (after logging in) will have the options to select 
+one or more surveys from a DLL.
+&lt;br /&gt;&lt;br /&gt;
+NOTE - to remove the DLL from the webpage select the 'Remove User' option from the 'List of SP Users' DLL. 
+This will delete the specific Settings entry from the DNN db (table Modulesettings).
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+&lt;h5&gt;SurveyBox SurveyID&lt;/h5&gt;
+&lt;br /&gt;
+The DDL of Surveys (List of SP Surveys) is populated from the SP database (vts_tbsurveys table). All surveys (active/ non active) created
+are shown to select from. 
+&lt;br /&gt;&lt;br /&gt;
+Once a survey is selected it will be presented on the webpage to all visitors/ DNN users who have access to the webpage and 
+SurveyBox Module. This is determined by the default DNN Page and Module Permissions settings.
+&lt;br /&gt;&lt;br /&gt;
+If a visitor, DNN user or Role is authorised (SurveyBox Module Permissions tab) to have access to a DLL of surveys the 'individual' survey 
+as set will not show.
+&lt;br /&gt;&lt;br /&gt;
+&lt;b&gt;Action&lt;/b&gt;&lt;br /&gt;
+- select a survey from the List of SP Surveys&lt;br /&gt;
+- click the Update button
+&lt;br /&gt;&lt;br /&gt;
+NOTE - to remove the survey from the webpage select the 'Remove Survey' option from the 'List of SP Surveys' DLL. 
+This will delete the specific Settings entry from the DNN db (table Modulesettings).</value>
   </data>
 </root>

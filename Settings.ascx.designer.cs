@@ -13,13 +13,31 @@ namespace FWS.Modules.SurveyBox {
     public partial class Settings {
         
         /// <summary>
+        /// lblBasicHelp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl lblBasicHelp;
+        
+        /// <summary>
+        /// pnlBasicHelp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBasicHelp;
+        
+        /// <summary>
         /// lblUserID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblUserID;
+        protected global::System.Web.UI.UserControl lblUserID;
         
         /// <summary>
         /// txtUserID control.
@@ -37,7 +55,7 @@ namespace FWS.Modules.SurveyBox {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblUserIDDdl;
+        protected global::System.Web.UI.UserControl lblUserIDDdl;
         
         /// <summary>
         /// ddlUsers control.
@@ -55,7 +73,7 @@ namespace FWS.Modules.SurveyBox {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblSurveyID;
+        protected global::System.Web.UI.UserControl lblSurveyID;
         
         /// <summary>
         /// txtSurveyID control.
@@ -73,7 +91,7 @@ namespace FWS.Modules.SurveyBox {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblSurveyIDDdl;
+        protected global::System.Web.UI.UserControl lblSurveyIDDdl;
         
         /// <summary>
         /// ddlSurveys control.

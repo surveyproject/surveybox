@@ -1,16 +1,14 @@
-<dotnetnuke type="Package" version="5.0">
+﻿<dotnetnuke type="Package" version="5.0">
   <packages>
     <package name="SurveyBox" type="Module" version="01.02.00">
       <friendlyName>SurveyBox</friendlyName>
-      <description>
-        The SurveyBox module offers easy integration of the Survey™ Project's front end features into the DotNetNuke® CMS to present surveys, webforms and questionnaires to DNN users, respondents and voters.
-      </description>
+      <description>The SurveyBox DNN module enables easy integration of the Survey™ Project front end features into the DNN® CMS to present surveys, webforms and questionnaires to DNN users, respondents and voters.</description>
       <iconFile>~/DesktopModules/SurveyBox/Images/icon_surveybox_32.gif</iconFile>
       <owner>
-        <name>W3DevPRo™</name>
-        <organization>W3Devpro.com</organization>
+        <name>W3DevPro™</name>
+        <organization>W3DevPro.com</organization>
         <url>http://www.w3devpro.com</url>
-        <email><![CDATA[Contact WDP via the <a href="http://www.w3devpro.com/contact.cshtml" target="_new">Contact Page</a>]]></email>
+        <email>mail@w3devpro.com</email>
       </owner>
       <license src="Eula.html"></license>
       <releaseNotes src="ReleaseNotes.html"></releaseNotes>
@@ -26,20 +24,16 @@
               <name>00.00.01.SqlDataProvider</name>
               <version>00.00.01</version>
             </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.02.00.SqlDataProvider</name>
+              <version>01.02.00</version>
+            </script>
             <script type="UnInstall">
               <path>Providers\DataProviders\SqlDataProvider</path>
               <name>Uninstall.SqlDataProvider</name>
-              <version>00.00.01</version>
             </script>
           </scripts>
-        </component>
-        <component type="ResourceFile">
-          <resourceFiles>
-            <basePath>DesktopModules/SurveyBox</basePath>
-            <resourceFile>
-              <name>Resources.zip</name>
-            </resourceFile>
-          </resourceFiles>
         </component>
         <component type="Module">
           <desktopModule>
@@ -82,17 +76,25 @@
                     <controlTitle>SurveyBox Settings</controlTitle>
                     <controlType>Edit</controlType>
                     <iconFile />
-                    <helpUrl />
+                    <helpUrl>http://www.surveyproject.org</helpUrl>
                     <viewOrder>0</viewOrder>
                   </moduleControl>
                 </moduleControls>
                   <permissions>
-                    <permission code="SURVEYBOX_MODULE" key="SURVEYBOX1" name="Label Visible" />
-                    <permission code="SURVEYBOX_MODULE" key="SURVEYBOX2" name="Show Surveylist" />
+                    <permission code="SURVEYBOX_MODULE" key="SURVEYLIST" name="Show Surveylist" />
                   </permissions>
               </moduleDefinition>
             </moduleDefinitions>
           </desktopModule>
+          <eventMessage>
+            <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+            <processorCommand>UpgradeModule</processorCommand>
+            <attributes>
+              <businessControllerClass>FWS.Modules.SurveyBox.Components.FeatureController</businessControllerClass>
+              <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
+              <upgradeVersionsList>01.01.00,01.02.00</upgradeVersionsList>
+            </attributes>
+          </eventMessage>
         </component>
         <component type="Assembly">
           <assemblies>
@@ -104,42 +106,42 @@
             <assembly>
               <name>Votations.NSurvey.WebAdmin.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.WebControls.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.UserProvider.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.SQLServerDAL.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.EMailing.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.DAL.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.BLL.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>Votations.NSurvey.BE.dll</name>
               <path>bin</path>
-              <version>2.3.0.0</version>
+              <version>2.4.0.0</version>
             </assembly>
             <assembly>
               <name>CKEditor.NET.dll</name>
@@ -158,12 +160,28 @@
             </assembly>
           </assemblies>
         </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/SurveyBox</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Cleanup" version="01.02.00" fileName="01.02.00_cleanup.txt" />
         <component type="Config">
           <config>
             <configFile>web.config</configFile>
             <install>
               <configuration>
                 <nodes>
+                  <node path="/configuration/configSections/section[@name='enterpriseLibrary.ConfigurationSource']" action="remove" />
+                  <node path="/configuration/configSections/section[@name='dataConfiguration']" action="remove" />
+                  <node path="/configuration/configSections/section[@name='nSurveySettings']" action="remove" />
+                  <node path="/configuration/enterpriseLibrary.ConfigurationSource" action="remove" />
+                  <node path="/configuration/connectionStrings/add[@name='SurveyProjectTestConnectionString']" action="remove" />
+                  <node path="/configuration/dataConfiguration" action="remove" />
+                  <node path="/configuration/nSurveySettings" action="remove" />
                   <node path="/configuration/configSections" action="add" collision="ignore" >
                     <section name="enterpriseLibrary.ConfigurationSource" type="Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ConfigurationSourceSection, Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" requirePermission="true" />
                   </node>
@@ -186,11 +204,13 @@
                   <node path="/configuration/connectionStrings" action="insertafter" collision="ignore" >
                     <dataConfiguration defaultDatabase="SurveyProjectTestConnectionString" />
                   </node>
-                  <node path="/configuration/clientDependency" action="insertafter" collision="ignore" >
+                  <node path="/configuration/clientDependency" action="insertafter" collision="overwrite" >
                     <nSurveySettings>
                       <add key="NSurveyImagesPath" value="~/DesktopModules/SurveyBox/Images/" />
                       <add key="NSurveyXmlDataPath" value="~/DesktopModules/SurveyBox/XmlData/" />
                       <add key="NSurveyLanguagesPath" value="~/DesktopModules/SurveyBox/XmlData/Languages/" />
+                      <add key="NSurveyCssXmlPath" value="~/DesktopModules/SurveyBox/XmlData/Css/" />
+                      <add key="NSurveyAddressPath" value="~/DesktopModules/SurveyBox/XmlData/Address/" />
                       <add key="NSurveySMTPServer" value="" />
                       <add key="NSurveySMTPServerPort" value="" />
                       <add key="NSurveySMTPServerAuthUserName" value="" />

@@ -4,11 +4,13 @@
 
     <!-- Bootstrap CSS see module.css import trail-->
 
- <div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
- <asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
-                </div>
+<style id="defaultCSS" runat="server" visible="true">
+    @import url('desktopmodules/surveybox/Css/surveymobile.css');
+</style>
 
-Current User: <% =GetUserId()%> &amp; <% =GetUserName()%> &amp; <% =GetUserEmail()%> 
+		<div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
+ 			<asp:Label ID="MessageLabel" runat="server"  CssClass="ErrorMessage" Visible="False"></asp:Label>
+                </div>
 <br /><br />
                             <asp:Label Width="45%" ID="ChooseSurveyLabel" AssociatedControlID="ddlSurveys" runat="server" Visible="false"></asp:Label>
 
@@ -16,7 +18,7 @@ Current User: <% =GetUserId()%> &amp; <% =GetUserName()%> &amp; <% =GetUserEmail
                                 Visible="false">
                             </asp:DropDownList>
 
-                    <div class="container panel panel-default" style="margin-top:15px;">
+                 <main id="SurveyBoxDiv" class="panel panel-default">
 
                 <vts:SurveyBox ID="SurveyControl" CssClass="surveybox" Visible="false" EnableValidation="true" runat="server">
                     <QuestionStyle CssClass="questionStyle"></QuestionStyle>
@@ -37,4 +39,5 @@ Current User: <% =GetUserId()%> &amp; <% =GetUserName()%> &amp; <% =GetUserEmail
                     <FootStyle CssClass="footStyle"></FootStyle>
                 </vts:SurveyBox>
 
-      </div>
+                       </main>
+

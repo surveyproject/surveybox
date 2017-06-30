@@ -41,7 +41,7 @@ namespace FWS.Modules.SurveyBox.Components
     /// -----------------------------------------------------------------------------
 
     //uncomment the interfaces to add the support.
-    public class FeatureController : IUpgradeable //IPortable, ISearchable, 
+    public class FeatureController //: IUpgradeable //IPortable, ISearchable, 
     {
 
 
@@ -53,28 +53,28 @@ namespace FWS.Modules.SurveyBox.Components
         /// </summary>
         /// <param name="ModuleID">The Id of the module to be exported</param>
         /// -----------------------------------------------------------------------------
-        //public string ExportModule(int ModuleID)
-        //{
-        //string strXML = "";
+        public string ExportModule(int ModuleID)
+        {
+            //string strXML = "";
 
-        //List<SurveyBoxInfo> colSurveyBoxs = GetSurveyBoxs(ModuleID);
-        //if (colSurveyBoxs.Count != 0)
-        //{
-        //    strXML += "<SurveyBoxs>";
+            //List<SurveyBoxInfo> colSurveyBoxs = GetSurveyBoxs(ModuleID);
+            //if (colSurveyBoxs.Count != 0)
+            //{
+            //    strXML += "<SurveyBoxs>";
 
-        //    foreach (SurveyBoxInfo objSurveyBox in colSurveyBoxs)
-        //    {
-        //        strXML += "<SurveyBox>";
-        //        strXML += "<content>" + DotNetNuke.Common.Utilities.XmlUtils.XMLEncode(objSurveyBox.Content) + "</content>";
-        //        strXML += "</SurveyBox>";
-        //    }
-        //    strXML += "</SurveyBoxs>";
-        //}
+            //    foreach (SurveyBoxInfo objSurveyBox in colSurveyBoxs)
+            //    {
+            //        strXML += "<SurveyBox>";
+            //        strXML += "<content>" + DotNetNuke.Common.Utilities.XmlUtils.XMLEncode(objSurveyBox.Content) + "</content>";
+            //        strXML += "</SurveyBox>";
+            //    }
+            //    strXML += "</SurveyBoxs>";
+            //}
 
-        //return strXML;
+            //return strXML;
 
-        //	throw new System.NotImplementedException("The method or operation is not implemented.");
-        //}
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
 
         /// -----------------------------------------------------------------------------
         /// <summary>
@@ -85,20 +85,20 @@ namespace FWS.Modules.SurveyBox.Components
         /// <param name="Version">The version of the module to be imported</param>
         /// <param name="UserId">The Id of the user performing the import</param>
         /// -----------------------------------------------------------------------------
-        //public void ImportModule(int ModuleID, string Content, string Version, int UserID)
-        //{
-        //XmlNode xmlSurveyBoxs = DotNetNuke.Common.Globals.GetContent(Content, "SurveyBoxs");
-        //foreach (XmlNode xmlSurveyBox in xmlSurveyBoxs.SelectNodes("SurveyBox"))
-        //{
-        //    SurveyBoxInfo objSurveyBox = new SurveyBoxInfo();
-        //    objSurveyBox.ModuleId = ModuleID;
-        //    objSurveyBox.Content = xmlSurveyBox.SelectSingleNode("content").InnerText;
-        //    objSurveyBox.CreatedByUser = UserID;
-        //    AddSurveyBox(objSurveyBox);
-        //}
+        public void ImportModule(int ModuleID, string Content, string Version, int UserID)
+        {
+            //XmlNode xmlSurveyBoxs = DotNetNuke.Common.Globals.GetContent(Content, "SurveyBoxs");
+            //foreach (XmlNode xmlSurveyBox in xmlSurveyBoxs.SelectNodes("SurveyBox"))
+            //{
+            //    SurveyBoxInfo objSurveyBox = new SurveyBoxInfo();
+            //    objSurveyBox.ModuleId = ModuleID;
+            //    objSurveyBox.Content = xmlSurveyBox.SelectSingleNode("content").InnerText;
+            //    objSurveyBox.CreatedByUser = UserID;
+            //    AddSurveyBox(objSurveyBox);
+            //}
 
-        //	throw new System.NotImplementedException("The method or operation is not implemented.");
-        //}
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
 
         /// -----------------------------------------------------------------------------
         /// <summary>
@@ -106,22 +106,22 @@ namespace FWS.Modules.SurveyBox.Components
         /// </summary>
         /// <param name="ModInfo">The ModuleInfo for the module to be Indexed</param>
         /// -----------------------------------------------------------------------------
-        //public DotNetNuke.Services.Search.SearchItemInfoCollection GetSearchItems(DotNetNuke.Entities.Modules.ModuleInfo ModInfo)
-        //{
-        //SearchItemInfoCollection SearchItemCollection = new SearchItemInfoCollection();
+        public DotNetNuke.Services.Search.SearchItemInfoCollection GetSearchItems(DotNetNuke.Entities.Modules.ModuleInfo ModInfo)
+        {
+            //SearchItemInfoCollection SearchItemCollection = new SearchItemInfoCollection();
 
-        //List<SurveyBoxInfo> colSurveyBoxs = GetSurveyBoxs(ModInfo.ModuleID);
+            //List<SurveyBoxInfo> colSurveyBoxs = GetSurveyBoxs(ModInfo.ModuleID);
 
-        //foreach (SurveyBoxInfo objSurveyBox in colSurveyBoxs)
-        //{
-        //    SearchItemInfo SearchItem = new SearchItemInfo(ModInfo.ModuleTitle, objSurveyBox.Content, objSurveyBox.CreatedByUser, objSurveyBox.CreatedDate, ModInfo.ModuleID, objSurveyBox.ItemId.ToString(), objSurveyBox.Content, "ItemId=" + objSurveyBox.ItemId.ToString());
-        //    SearchItemCollection.Add(SearchItem);
-        //}
+            //foreach (SurveyBoxInfo objSurveyBox in colSurveyBoxs)
+            //{
+            //    SearchItemInfo SearchItem = new SearchItemInfo(ModInfo.ModuleTitle, objSurveyBox.Content, objSurveyBox.CreatedByUser, objSurveyBox.CreatedDate, ModInfo.ModuleID, objSurveyBox.ItemId.ToString(), objSurveyBox.Content, "ItemId=" + objSurveyBox.ItemId.ToString());
+            //    SearchItemCollection.Add(SearchItem);
+            //}
 
-        //return SearchItemCollection;
+            //return SearchItemCollection;
 
-        //	throw new System.NotImplementedException("The method or operation is not implemented.");
-        //}
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
 
         /// -----------------------------------------------------------------------------
         /// <summary>
@@ -132,53 +132,53 @@ namespace FWS.Modules.SurveyBox.Components
         public string UpgradeModule(string Version)
         {
 
-            if (Version == "01.01.00")
-            {
-                // Install module permissions
-                InitModulePermissions();
-            }
-            return Version;
+            //    if (Version == "01.01.00")
+            //    {
+            //        // Install module permissions
+            //        InitModulePermissions();
+            //    }
+            //    return Version;
 
-            //throw new System.NotImplementedException("The method or operation is not implemented.");
+            throw new System.NotImplementedException("The method or operation is not implemented.");
         }
 
 
 
-        private void InitModulePermissions()
-        {
-            PermissionController permCtl = new PermissionController();
+        //private void InitModulePermissions()
+        //{
+        //    PermissionController permCtl = new PermissionController();
 
-            int PID = PortalController.Instance.GetCurrentPortalSettings().PortalId;
+        //    int PID = PortalController.Instance.GetCurrentPortalSettings().PortalId;
 
-            DesktopModuleInfo desktopInfo = DesktopModuleController.GetDesktopModuleByModuleName("SurveyBox", PID);
+        //    DesktopModuleInfo desktopInfo = DesktopModuleController.GetDesktopModuleByModuleName("SurveyBox", PID);
 
-            ModuleDefinitionInfo modDefInfo = ModuleDefinitionController.GetModuleDefinitionByDefinitionName("SurveyBox", desktopInfo.DesktopModuleID);
+        //    ModuleDefinitionInfo modDefInfo = ModuleDefinitionController.GetModuleDefinitionByDefinitionName("SurveyBox", desktopInfo.DesktopModuleID);
 
-            try
-            {
-                PermissionInfo pi = new PermissionInfo();
-                pi.ModuleDefID = modDefInfo.ModuleDefID;
-                pi.PermissionCode = ModuleSecurity.PERMISSIONCODE;
-                pi.PermissionKey = ModuleSecurity.PERMISSION1;
-                pi.PermissionName = "Label Visible";
-                permCtl.AddPermission(pi);
-            }
-            catch
-            {
-            }
-            try
-            {
-                PermissionInfo pi = new PermissionInfo();
-                pi.ModuleDefID = modDefInfo.ModuleDefID;
-                pi.PermissionCode = ModuleSecurity.PERMISSIONCODE;
-                pi.PermissionKey = ModuleSecurity.PERMISSION2;
-                pi.PermissionName = "Show Surveylist";
-                permCtl.AddPermission(pi);
-            }
-            catch
-            {
-            }
-        }
+        //    //try
+        //    //{
+        //    //    PermissionInfo pi = new PermissionInfo();
+        //    //    pi.ModuleDefID = modDefInfo.ModuleDefID;
+        //    //    pi.PermissionCode = ModuleSecurity.PERMISSIONCODE;
+        //    //    pi.PermissionKey = ModuleSecurity.PERMISSION1;
+        //    //    pi.PermissionName = "Label Visible";
+        //    //    permCtl.AddPermission(pi);
+        //    //}
+        //    //catch
+        //    //{
+        //    //}
+        //    try
+        //    {
+        //        PermissionInfo pi = new PermissionInfo();
+        //        pi.ModuleDefID = modDefInfo.ModuleDefID;
+        //        pi.PermissionCode = ModuleSecurity.PERMISSIONCODE;
+        //        pi.PermissionKey = ModuleSecurity.PERMISSION2;
+        //        pi.PermissionName = "Show Surveylist";
+        //        permCtl.AddPermission(pi);
+        //    }
+        //    catch
+        //    {
+        //    }
+        //}
 
         #endregion
 

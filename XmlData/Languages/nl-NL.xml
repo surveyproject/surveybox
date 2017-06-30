@@ -10,7 +10,7 @@
     <value>&lt;%@ Register TagPrefix="vts" Namespace="Votations.NSurvey.WebControls" Assembly="Votations.NSurvey.WebControls" %&gt;</value>
   </data>
   <data version="1.0" id="4" name="QuickLinkInfo">
-    <value>De enqu&#234;te kan gepubliceerd worden met behulp van de volgende link:</value>
+    <value>URL toegang enqu&#234;te:</value>
   </data>
   <data version="1.0" id="5" name="SurveyCodePreviewTitle">
     <value>Voorbeeld Enqu&#234;te</value>
@@ -355,7 +355,7 @@
     <value>Nieuwe lijn</value>
   </data>
   <data version="1.0" id="119" name="PageTitle">
-    <value>Pagina</value>
+    <value>Pag.</value>
   </data>
   <data version="1.0" id="120" name="EditHyperLink">
     <value>Bewerk vraag</value>
@@ -893,7 +893,7 @@
     <value>Wachtwoord</value>
   </data>
   <data version="1.0" id="294" name="ValidateCredentialsButton">
-    <value>Inloggen</value>
+    <value>Verzend</value>
   </data>
   <data version="1.0" id="295" name="InvalidLoginPasswordMessage">
     <value>Ongeldige Inloggegevens</value>
@@ -1313,7 +1313,7 @@
     <value>Nieuwe voorwaarde toevoegen</value>
   </data>
   <data version="1.4" id="432" name="VoterUserNameLabel">
-    <value>.NET gebruikersnaam:</value>
+    <value>SP gebruikersnaam:</value>
   </data>
   <data version="1.4" id="433" name="ContextUserNameDisabled">
     <value>Uitgezet</value>
@@ -2398,7 +2398,7 @@
     <value>Naam variabele:</value>
   </data>
   <data version="1.9" id="793" name="VariableNameInfoLabel">
-    <value>De te tonen taal invullen. bijv.: en-US, fr-FR etc .. </value>
+    <value>Aan enquete url plakken om taal te bepalen. Bijv. ..?taal=nl-NL</value>
   </data>
   <data version="1.9" id="794" name="VariableNameUpdateButton">
     <value>Bijwerken</value>
@@ -2771,14 +2771,12 @@
     <value>&lt;b&gt;Survey&#8482; Project Helpbestanden zijn beperkt beschikbaar.&lt;/b&gt; &lt;br /&gt;&lt;br /&gt; Meer informatie over het gebruik van de Survey applicatie is te vinden via &lt;a href="http://www.surveyproject.org" title="Surveyproject Gemeenschapssite" target="_blank"&gt; http://www.surveyproject.org &lt;/a&gt;. Vragen kunnen daar worden gesteld.&lt;br /&gt; &lt;br /&gt; Voor downloads, broncode en technische achtergronden ga naar &lt;a href="http://survey.codeplex.com" title="Survey Project" target="_blank"&gt; http://survey.codeplex.com &lt;/a&gt;. &lt;br /&gt;</value>
   </data>
   <data version="1.2.2" id="915" name="Disclaimer">
-    <value>&lt;h4&gt;SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.fryslanwebservices.com" title="Fryslan Webservices Homepage" target="_blank"&gt;Fryslan Webservices&#8482; &lt;/a&gt;, copyright (c) 2009/2014. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.&lt;/h4&gt; </value>
+    <value>SURVEY&#8482; PROJECT is een webapplicatie voor online enqu&#234;tes en formulieren gebaseerd op de open source software NSurvey (&lt;a href="http://www.nsurvey.org" target="_blank"&gt;Thomas Zumbrunn&lt;/a&gt;, (c) 2004/2005). Survey&#8482; Project is gepubliceerd onder een GNU GENERAL PUBLIC LICENSE v.3, 29 June 2007. Het vernieuwde SURVEY&#8482; PROJECT is een initiatief van &lt;a href="http://www.w3devpro.com" title="W3DevPro Homepage" target="_blank"&gt;W3DevPro&#8482; &lt;/a&gt;, copyright (c) 2009/2017. SURVEY&#8482; PROJECT is te vinden via &lt;a href="http://www.surveyproject.org" title="Survey Project Community Site" target="_blank"&gt;http://www.surveyproject.org&lt;/a&gt;.</value>
   </data>
   <data version="1.2.2" id="916" name="Introduction">
     <value>
-
       Welkom, de Survey™ Project Webapplicatie is geactiveerd.
       &lt;br /&gt;&lt;br /&gt;
-
       Om de eerste keer in te loggen:&lt;br /&gt;
       inlognaam = &lt;strong&gt;admin&lt;/strong&gt;&lt;br /&gt;
       wachtwoord = &lt;strong&gt;admin&lt;/strong&gt;
@@ -2787,7 +2785,6 @@
       volg de instructies via menuoptie Help/ Helpopties.
       &lt;br /&gt;&lt;br /&gt;
       U kunt nu beginnen met het gebruik van de online Survey™ tool.
-
     </value>
   </data>
   <data version="1.2.2" id="917" name="SurveyInactive">
@@ -3058,7 +3055,7 @@
     <value>Anonieme toegang (antwoorden zijn niet gekoppeld aan een token)</value>
   </data>
   <data version="2.0" id="1006" name="IPRangeSecurityInEffect">
-    <value>IP Filter is in effect getreden</value>
+    <value>IP Filter is actief</value>
   </data>
   <data version="2.0" id="1007" name="IPNotInRange">
     <value>Uw IP adres valt niet binnen het acceptabele bereik.</value>
@@ -3088,7 +3085,7 @@
     <value>Gebruik filter</value>
   </data>
   <data version="2.0" id="1016" name="lblGenerate">
-    <value>Genereer</value>
+    <value>Gewenst Aantal Tokens</value>
   </data>
   <data version="2.0" id="1017" name="lblGenerateCount">
     <value>Aantal Tokens :</value>
@@ -3191,7 +3188,7 @@
   </data>
   <data version="2.0" id="1050" name="AutoFilterMessage">
     <value>
-      Opmerking: Bij het automatisch aanmaken wordt een filter aangemaakt voor elk antwoord dat een vraag kan hebben.&lt;br /&gt;
+      Opmerking: Bij het automatisch aanmaken wordt een filter aangemaakt voor elk antwoord dat een vraag kan hebben.
       Het is alleen beschikbaar voor gesloten vragen (geen vrije tekst velden).
     </value>
   </data>
@@ -3229,10 +3226,10 @@
     <value>Weet u zeker dat u deze pagina wilt verwijderen?</value>
   </data>
   <data version="2.0" id="1062" name="FriendlyLabel">
-    <value>Maak een gebruiksvriendelijke link (URL):</value>
+    <value>Gebruiksvriendelijke URL:</value>
   </data>
   <data version="2.0" id="1063" name="FriendlyUrl">
-    <value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / survey.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
+    <value>Opmerking: URL indeling = http:// [UwWebSiteUrl] / surveymobile.aspx / [&lt;b&gt;UwUrlNaam&lt;/b&gt;] </value>
   </data>
   <data version="2.0" id="1064" name="BtnFriendly">
     <value>Opslaan</value>
@@ -3449,5 +3446,116 @@
   </data>
   <data version="2.3" id="1134" name="SurveyListPageNrLiteral">
     <value>Pagina</value>
+  </data>
+  <data version="2.4" id="1135" name="GeneralSettingsHyperlink">
+    <value>Systeem Instellingen</value>
+  </data>
+  <data version="2.4" id="1136" name="InvalidMatrixQuestionID">
+    <value>Ongeldige matrix QuestionID!</value>
+  </data>
+  <data version="2.4" id="1137" name="InvalidVoterID">
+    <value>Ongeldige VoterID!</value>
+  </data>
+  <data version="2.4" id="1138" name="DDlValue">
+    <value>Ongeldige keuzelijst waarde</value>
+  </data>
+  <data version="2.4" id="1139" name="InvalidPageNumber">
+    <value>Ongeldig pagina nummer!</value>
+  </data>
+  <data version="2.4" id="1140" name="InvalidQuestionID">
+    <value>Ongeldige QuestionID!</value>
+  </data>
+  <data version="2.4" id="1141" name="VoterID">
+    <value>VoterID</value>
+  </data>
+  <data version="2.4" id="1142" name="GroupGuid">
+    <value>GroepsGuid</value>
+  </data>
+  <data version="2.4" id="1143" name="TokenSecurity">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.4" id="1144" name="SurveyLayout">
+    <value>Enqu&#234;te Layout</value>
+  </data>
+  <data version="2.4" id="1145" name="AccessSurveyList">
+    <value>Toegang Enqu&#234;telijst</value>
+  </data>
+  <data version="2.4" id="1146" name="HelpLabelHelpfiles">
+    <value>Beschikbare Helpbestanden</value>
+  </data>
+  <data version="2.4" id="1147" name="HelpLabelStartupSettings">
+    <value>Opstarten en Instellingen</value>
+  </data>
+  <data version="2.4" id="1148" name="CancelButtonText">
+    <value> Cancel </value>
+  </data>
+  <data version="2.4" id="1149" name="RadioButtonAnswerCssLabel">
+    <value>Radiobutton CSS :</value>
+  </data>
+  <data version="2.4" id="1150" name="GeneralSettingsTitle">
+    <value>INSTALLATIE SETTINGS</value>
+  </data>
+  <data version="2.4" id="1151" name="CssXmlHyperLink">
+    <value>Css Xml</value>
+  </data>
+  <data version="2.4" id="1152" name="FieldAddressType">
+    <value>Veld - Adres</value>
+  </data>
+  <data version="2.4" id="1153" name="SelectAnswerTypeDDL">
+    <value>[Kies AntwoordType]</value>
+  </data>
+  <data version="2.4" id="1154" name="TokenList">
+    <value>Lijst van Tokens</value>
+  </data>
+  <data version="2.4" id="1155" name="TokenFilter">
+    <value>Tokenlijst Filter Opties</value>
+  </data>
+  <data version="2.4" id="1156" name="MandatoryQuestionTitle">
+    <value>Verplichte Vraag</value>
+  </data>
+  <data version="2.4" id="1157" name="MandatoryAnswerTitle">
+    <value>Verplicht Antwoord</value>
+  </data>
+  <data version="2.4" id="1158" name="FriendlyNameDeletedMsg">
+    <value>Gebruiksvriendelijk URL verwijderd</value>
+  </data>
+  <data version="2.4" id="1160" name="SurveyLayoutSavedMsg">
+    <value>Layout correct opgeslagen</value>
+  </data>
+  <data version="2.4" id="1161" name="InvalidFileTypeLayoutMsg">
+    <value>Verkeerd bestandstype: alleen .CSS</value>
+  </data>
+  <data version="2.4" id="1162" name="CssFileUpdatedMsg">
+    <value>CSS bestand geupdate</value>
+  </data>
+  <data version="2.4" id="1163" name="SpFrontPageSlogan">
+    <value>
+      Platform voor het ontwikkelen en delen van software&lt;br /&gt; om online gegevens te verzamelen
+    </value>
+  </data>
+  <data version="2.4" id="1164" name="SpFrontPageTheme">
+    <value>
+      De open source webapplicatie om online enqu&#234;tes en webformulieren te maken en te publiceren
+    </value>
+  </data>
+  <data version="2.4" id="1165" name="DisclaimerTitle">
+    <value>
+      Licentie &amp; Disclaimer
+    </value>
+  </data>
+  <data version="2.4" id="1166" name="IPRanges">
+    <value>IP Ranges</value>
+  </data>
+  <data version="2.4" id="1167" name="ValidateCredentialsButtonTooltip">
+    <value>Toegangsgegevens valideren</value>
+  </data>
+  <data version="2.4" id="1168" name="Token Protection">
+    <value>Token Beveiliging</value>
+  </data>
+  <data version="2.4" id="1169" name="IP Filter">
+    <value>IP Filter Beveiliging</value>
+  </data>
+  <data version="2.4" id="1170" name="btnGenerate">
+    <value>Aanmaken</value>
   </data>
 </root>
