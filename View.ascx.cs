@@ -163,13 +163,19 @@ namespace FWS.Modules.SurveyBox
                             {
                                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                                 {
-                                    defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
+                                    string cssurl = ResolveUrl("Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss);
+                                    defaultCSS.InnerHtml = "@import url(\"" + cssurl + "\");";
 
                                 }
 
                             }
-
+                            else
+                            {
+                                string alt2css = ResolveUrl("Css/surveymobile.css");
+                                defaultCSS.InnerHtml = "@import url(\"" + alt2css + "\");";
                             }
+
+                        }
                         else
                         {   //test:
 
@@ -202,7 +208,7 @@ namespace FWS.Modules.SurveyBox
             }
             catch (Exception exc) //Module failed to load
             {
-                Exceptions.ProcessModuleLoadException("A Friendly testmessage explaining things?!", this, exc, true);
+                Exceptions.ProcessModuleLoadException("ErrorDetails:" + exc.StackTrace + "& Inner:" + exc.GetBaseException(), this, exc, true);
             }
 
         }
@@ -259,10 +265,15 @@ namespace FWS.Modules.SurveyBox
                 if (!string.IsNullOrEmpty(_userSettings.SurveyLayout[0].SurveyCss))
                 {
 
-                    defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
-
+                    //defaultCSS.InnerHtml = "@import url(\"desktopmodules/surveybox/Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss + "\")";
+                    string cssurl = ResolveUrl("Css/" + SurveyControl.SurveyId.ToString() + "/" + _userSettings.SurveyLayout[0].SurveyCss);
+                    defaultCSS.InnerHtml = "@import url(\"" + cssurl + "\");";
                 }
-
+            }
+            else
+            {
+                string alt2css = ResolveUrl("Css/surveymobile.css");
+                defaultCSS.InnerHtml = "@import url(\"" + alt2css + "\");";
             }
 
 

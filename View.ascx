@@ -5,7 +5,7 @@
     <!-- Bootstrap CSS see module.css import trail-->
 
 <style id="defaultCSS" runat="server" visible="true">
-    @import url('desktopmodules/surveybox/Css/surveymobile.css');
+    	@import url('<%# ResolveUrl("Css/surveymobile.css") %>');
 </style>
 
 		<div style="position: absolute; width: 650px; text-align: center; margin-left: 57px; top: 15px;">
